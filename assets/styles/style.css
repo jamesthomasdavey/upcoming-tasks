@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*****************************
+********************* GENERAL
+*****************************/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.todo {
+  width: 90%;
+  height: 768px;
+  min-width: 480px;
+  padding: 2rem 4rem;
+  background: #222930;
+  border-radius: 4px;
+  color: white;
+  overflow: scroll;
+}
+
+.todo__header {
+  padding: 1rem 0;
+}
+
+.todo__title {
+  margin: 1rem;
+  text-align: center;
+}
+
+.todo__input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.todo__item {
+  list-style-type: none;
+  padding: 1rem 1.2rem;
+  border-bottom: 2px solid #d49a3f;
+}
+
+.todo__item:hover {
+  cursor: default;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #aaa;
+  border-bottom: 2px solid rgb(65, 52, 32);
+}
