@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Upcoming Tasks</title>
+  <title>Document</title>
   <link rel="stylesheet" href="assets/styles/style.css">
 </head>
-
 <body>
-  <main>
+  <main class="content">
     <div class="container">
-      <div class="todo">
-        <div class="todo__header">
-          <h1 class="todo__title">Upcoming Tasks</h1>
-          <label for="todo input">
-            <input class="todo__input" type="text" placeholder="enter a todo">
-          </label>
-        </div>
-        <div class="todo__body">
-          <ul class="todo__list">
-            <li class="todo__item">Do your laundry</li>
-            <li class="todo__item">Create a video</li>
-            <li class="todo__item">Edit video content</li>
-          </ul>
-        </div>
+      <div class="tasks__header">
+        <h1 class="tasks__title">
+          Today's Tasks
+        </h1>
+        <label for="tasks__input">
+          <input id="tasks__input" type="text" placeholder="Enter a task..." autofocus>
+        </label>
+      </div>
+      <div class="tasks__content">
+        <ul class="tasks__list">
+        </ul>
       </div>
     </div>
   </main>
   <script src="assets/scripts/script.js"></script>
 </body>
-
 </html>

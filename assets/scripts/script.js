@@ -1,40 +1,40 @@
-const todoInputEl = document.querySelector(`.todo__input`);
-const todoListEl = document.querySelector(`.todo__list`);
-const todoItemEls = document.querySelectorAll(`.todo__item`);
+const tasksInputEl = document.querySelector(`#tasks__input`);
+const tasksListEl = document.querySelector(`.tasks__list`);
 
-function addListItem() {
-  todoInputEl.addEventListener(`keypress`, function(event) {
+function addTask() {
+  tasksInputEl.addEventListener(`keypress`, function(event) {
     if (event.keyCode === 13) {
-      let newListItem = createListItem(todoInputEl.value);
-      // todoListEl.appendChild(newListItem);
-      todoListEl.insertBefore(newListItem, todoListEl.childNodes[0])
-      todoInputEl.value = ``;
+      if (tasksInputEl.value !== ``) {
+        tasksListEl.insertBefore(newTaskItem(), tasksListEl.firstElementChild);
+        tasksInputEl.value = ``;
+      }
+    }
+  })
+}
+
+function newTaskItem() {
+  let myNewTaskItem = document.createElement(`li`);
+  myNewTaskItem.classList.add(`tasks__item`);
+  myNewTaskItem.innerHTML = tasksInputEl.value;
+  return myNewTaskItem;
+}
+
+function completeTask() {
+  tasksListEl.addEventListener(`click`, function(e) {
+    if (e.target.classList.contains(`tasks__item`)) {
+      e.target.classList.toggle(`complete`);
     }
   });
 }
 
-// function toggleDone() {
-//   for (let elem of todoItemEls) {
-//     elem.addEventListener(`click`, function() {
-//       elem.classList.toggle(`done`);
-//     })
-//   }
-// }
-
-function toggleDone() {
-  todoListEl.addEventListener(`click`, function(event) {
-    if (event.target.classList.contains(`todo__item`)) {
-      event.target.classList.toggle(`done`);
+function deleteTask() {
+  tasksListEl.addEventListener(`dblclick`, function(e) {
+    if (e.target.classList.contains(`tasks__item`)) {
+      e.target.classList.toggle(`delete`);
     }
-  }) 
+  });
 }
 
-function createListItem(text) {
-  const newListElement = document.createElement(`li`);
-  newListElement.textContent = text;
-  newListElement.classList.add(`todo__item`);
-  return newListElement;
-}
-
-toggleDone();
-addListItem();
+addTask();
+completeTask();
+deleteTask();

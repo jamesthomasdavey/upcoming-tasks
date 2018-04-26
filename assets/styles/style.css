@@ -5,7 +5,7 @@
   display: table;
 }
 
-html {
+html, body {
   box-sizing: border-box;
   height: 100%;
 }
@@ -24,55 +24,80 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background: #8EAEBD;
+  padding: 1rem;
+}
+
+.content {
+  height: 100%;
 }
 
 .container {
-  max-width: 960px;
   margin: 0 auto;
-  padding-top: 2rem;
-}
-
-.todo {
-  width: 90%;
-  height: 768px;
-  min-width: 480px;
-  padding: 2rem 4rem;
-  background: #222930;
-  border-radius: 4px;
-  color: white;
-  overflow: scroll;
-}
-
-.todo__header {
-  padding: 1rem 0;
-}
-
-.todo__title {
-  margin: 1rem;
-  text-align: center;
-}
-
-.todo__input {
   width: 100%;
-  border-radius: 4px;
-  padding: 1rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  outline: none;
+  height: 800px;
+  max-width: 960px;
+  background: #30415D;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.todo__item {
+.tasks__header {
+  background: #081422;
+  padding: 2rem;
+  border-bottom: 4px solid #CF6766;
+}
+
+.tasks__title {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #FFF;
+}
+
+#tasks__input {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid white;
+  color: white;
+  outline: 0;
+}
+
+::placeholder {
+  color: white;
+}
+
+.tasks__content {
+  overflow-y: scroll;
+  padding: 1rem 3rem;
+  height: 100%;
+}
+
+.tasks__item {
   list-style-type: none;
-  padding: 1rem 1.2rem;
-  border-bottom: 2px solid #d49a3f;
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  border-bottom: 4px solid #CF6766;
+  transition: 0.3s all ease;
 }
 
-.todo__item:hover {
-  cursor: default;
+.tasks__item:hover {
+  cursor: pointer;
 }
 
-.done {
+.complete.tasks__item {
   text-decoration: line-through;
-  color: #aaa;
-  border-bottom: 2px solid rgb(65, 52, 32);
+  color: #8EAEBD;
+  border-bottom: 4px solid #8EAEBD;
+}
+
+.delete {
+  display: none;
 }
