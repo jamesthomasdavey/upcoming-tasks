@@ -25,7 +25,7 @@ body {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #8EAEBD;
+  background: #D5D5D5;
   padding: 1rem;
 }
 
@@ -38,15 +38,15 @@ body {
   width: 100%;
   height: 800px;
   max-width: 960px;
-  background: #30415D;
+  background: #96858F;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .tasks__header {
-  background: #081422;
+  background: #6D7993;
   padding: 2rem;
-  border-bottom: 4px solid #CF6766;
+  border-bottom: 4px solid #D5D5D5;
 }
 
 .tasks__title {
@@ -87,7 +87,7 @@ body {
   width: 100%;
   color: white;
   padding: 1rem;
-  border-bottom: 4px solid #CF6766;
+  border-bottom: 2px solid #D5D5D5;
   transition: 0.3s all ease;
 }
 
@@ -98,7 +98,7 @@ body {
 .complete.tasks__item {
   text-decoration: line-through;
   color: #8EAEBD;
-  border-bottom: 4px solid #8EAEBD;
+  border-bottom: 2px solid #9099A2;
 }
 
 .delete {
