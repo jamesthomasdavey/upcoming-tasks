@@ -1,16 +1,14 @@
 const tasksInputEl = document.querySelector(`#tasks__input`);
 const tasksListEl = document.querySelector(`.tasks__list`);
 
-function addTask() {
-  tasksInputEl.addEventListener(`keypress`, function(event) {
-    if (event.keyCode === 13) {
-      if (tasksInputEl.value !== ``) {
-        tasksListEl.insertBefore(newTaskItem(), tasksListEl.firstElementChild);
-        tasksInputEl.value = ``;
-      }
+tasksInputEl.addEventListener(`keypress`, function (event) {
+  if (event.keyCode === 13) {
+    if (tasksInputEl.value !== ``) {
+      tasksListEl.insertBefore(newTaskItem(), tasksListEl.firstElementChild);
+      tasksInputEl.value = ``;
     }
-  })
-}
+  }
+});
 
 function newTaskItem() {
   let myNewTaskItem = document.createElement(`li`);
@@ -28,27 +26,17 @@ function newTaskItem() {
   return myNewTaskItem;
 }
 
-function completeTask() {
-  tasksListEl.addEventListener(`click`, function(e) {
-    if (e.target.classList.contains(`tasks__item`)) {
-      e.target.classList.toggle(`complete`);
-    }
-  });
-}
+tasksListEl.addEventListener(`click`, function (e) {
+  if (e.target.classList.contains(`tasks__item`)) {
+    e.target.classList.toggle(`complete`);
+  }
+  if (e.target.classList.contains(`xIcon`)) {
+    tasksListEl.removeChild(e.target.parentNode);
+  }
+});
 
-function deleteTask() {
-  tasksListEl.addEventListener(`dblclick`, function(e) {
-    if (e.target.classList.contains(`tasks__item`)) {
-      e.target.classList.add(`delete`);
-    }
-  });
-  tasksListEl.addEventListener(`click`, function(e) {
-    if (e.target.classList.contains(`xIcon`)) {
-      e.target.parentNode.classList.add(`delete`);
-    }
-  });
-}
-
-addTask();
-completeTask();
-deleteTask();
+tasksListEl.addEventListener(`dblclick`, function (e) {
+  if (e.target.classList.contains(`tasks__item`)) {
+    tasksListEl.removeChild(e.target.parentNode);
+  }
+});
